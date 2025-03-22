@@ -137,34 +137,44 @@ const ChatApp: React.FC = () => {
 
   return (
     <div style={styles.pageContainer}>
-      <Sidebar 
-        profileImage="/avatars/quynguyen.jpg"
-        profileName="Jimi Hendrix"
-        activeNav={activeNav}
-        onNavChange={setActiveNav}
-      />
-      <ChatList 
-        contacts={contacts}
-        activeChat={activeChat}
-        onChatSelect={handleChatSelect}
-      />
-      <ChatWindow 
-        activeChat={activeChat}
-        contacts={contacts}
-      />
+      <div style={styles.appWrapper}>
+        <Sidebar 
+          profileImage="/avatars/quynguyen.jpg"
+          profileName="Jimi Hendrix"
+          activeNav={activeNav}
+          onNavChange={setActiveNav}
+        />
+        <ChatList 
+          contacts={contacts}
+          activeChat={activeChat}
+          onChatSelect={handleChatSelect}
+        />
+        <ChatWindow 
+          activeChat={activeChat}
+          contacts={contacts}
+        />
+      </div>
     </div>
   );
 };
 
 const styles: {
   pageContainer: React.CSSProperties;
+  appWrapper: React.CSSProperties;
 } = {
   pageContainer: {
-    display: "flex",
-    minHeight: "100vh",
+    width: "100%",
+    height: "100vh",
+    overflow: "hidden", // Prevent scrolling on the main container
     backgroundColor: "#f8f9fa",
     fontFamily: "'Segoe UI', 'Helvetica Neue', sans-serif",
     position: "relative",
+  },
+  appWrapper: {
+    display: "flex",
+    width: "100%",
+    height: "100%",
+    overflow: "hidden", // Prevent scrolling on the wrapper
   },
 };
 export default ChatApp;

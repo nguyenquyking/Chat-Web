@@ -92,8 +92,10 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ activeChat, contacts }) => {
           </div>
           
           <div style={styles.chatActions}>
-            <button style={styles.actionButton}>REQUEST VISIT</button>
-            <button style={styles.actionButton}>MAKE OFFER</button>
+            <div style={styles.actionButtonContainer}>
+              <button style={styles.actionButton}>REQUEST VISIT</button>
+              <button style={styles.actionButton}>MAKE OFFER</button>
+            </div>
           </div>
           
           <div style={styles.inputContainer}>
@@ -213,11 +215,15 @@ const styles: Record<string, React.CSSProperties> = {
   },
   chatActions: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     padding: "15px",
-    borderTop: "1px solid #f0f0f0",
-    backgroundColor: "#ffffff",
+    backgroundColor: "transparent", // Changed from "#ffffff" to transparent
+    borderTop: "none", // Removed the border
+  },
+  actionButtonContainer: {
+    display: "flex",
     gap: "10px",
+    justifyContent: "flex-start",
   },
   actionButton: {
     padding: "8px 15px",
