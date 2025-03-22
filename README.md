@@ -16,7 +16,7 @@ Check out the deployed version of the app here:
 - 🎨 Icons from **FontAwesome**
 
 ## 🏗️ Tech Stack
-- **React 18+**
+- **React**
 - **TypeScript**
 - **Redux Toolkit**
 - **FontAwesome** (for icons)
